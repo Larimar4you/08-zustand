@@ -60,3 +60,13 @@ export const getNotesByTag = async (
 
   return response.data;
 };
+
+export type Category = {
+  id: string;
+  name: string;
+};
+
+export const getCategories = async (): Promise<Category[]> => {
+  const res = await noteHubApi.get<Category[]>("/categories");
+  return res.data;
+};
