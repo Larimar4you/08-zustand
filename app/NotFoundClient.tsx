@@ -10,7 +10,7 @@ export default function NotFoundClient() {
   useEffect(() => {
     const timer = setTimeout(() => {
       router.push("/");
-    }, 3000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [router]);
