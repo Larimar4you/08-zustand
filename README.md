@@ -5,7 +5,7 @@ The project includes note filtering, note details, note creation, SEO metadata, 
 
 ## Live Demo
 
-https://08-zustand-olive-eight.vercel.app/
+https://08-zustand-alpha-rust.vercel.app/
 
 ## Repository
 
