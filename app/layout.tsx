@@ -5,13 +5,24 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import TanStackProvider from "@/components/TanStackProvider/TanStackprovider";
 
+const siteUrl = "https://08-zustand-ten-livid.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
   title: "NoteHub",
-  description: `NoteHub is a simple and efficient application designed for managing personal notes. It helps keep your thoughts organized and accessible`,
+
+  description:
+    "NoteHub is a simple and efficient application designed for managing personal notes. It helps keep your thoughts organized and accessible.",
 
   openGraph: {
     title: "NoteHub",
-    description: `NoteHub is a simple and efficient application designed for managing personal notes. It helps keep your thoughts organized and accessible`,
+
+    description:
+      "NoteHub is a simple and efficient application designed for managing personal notes. It helps keep your thoughts organized and accessible.",
+
+    url: siteUrl,
+
     images: [
       {
         url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
@@ -32,16 +43,18 @@ const roboto = Roboto({
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
   modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className={roboto.variable}>
+      <body className={`${roboto.variable} ${roboto.className}`}>
         <TanStackProvider>
           <Header />
           {children}
+          {modal}
           <Footer />
         </TanStackProvider>
       </body>
